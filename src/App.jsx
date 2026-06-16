@@ -14,8 +14,8 @@ function Reveal({ children, delay = 0, y = 40, className = '' }) {
       className={className}
       initial={{ opacity: 0, y }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.25 }}
-      transition={{ duration: 0.7, delay, ease: [0.22, 1, 0.36, 1] }}
+      viewport={{ once: true, amount: 0.1, margin: '0px 0px 12% 0px' }}
+      transition={{ duration: 0.6, delay, ease: [0.22, 1, 0.36, 1] }}
     >
       {children}
     </motion.div>
@@ -25,7 +25,7 @@ function Reveal({ children, delay = 0, y = 40, className = '' }) {
 /* Raqam count-up */
 function CountUp({ to, prefix = '', duration = 1.4 }) {
   const ref = useRef(null)
-  const inView = useInView(ref, { once: true, amount: 0.6 })
+  const inView = useInView(ref, { once: true, amount: 0.3, margin: '0px 0px 10% 0px' })
   const [val, setVal] = useState(0)
   useEffect(() => {
     if (!inView) return
@@ -302,8 +302,8 @@ export default function App() {
               <motion.div className="row" key={i}
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, amount: 0.6 }}
-                transition={{ duration: 0.5, delay: i * 0.06 }}>
+                viewport={{ once: true, amount: 0.1, margin: '0px 0px 12% 0px' }}
+                transition={{ duration: 0.45, delay: i * 0.05 }}>
                 <span className="feat">{r.f}</span>
                 <span className="col-c">{r.c}</span>
                 <span className="col-a">{r.a}</span>
