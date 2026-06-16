@@ -17,7 +17,8 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-snap-type: y proximity; /* yumshoq "ushlanish" — har bo'limda sekin to'xtaydi, lekin majburlamaydi */
+  scroll-snap-type: y mandatory; /* har bo'limda aniq "ushlanish" — taqdimot slaydlaridek */
+  scroll-padding-top: 0;
 }
 .hero, .section { scroll-snap-align: start; scroll-snap-stop: normal; }
 /* Mobil va baland bo'limlarda snap'ni o'chiramiz (noqulay bo'lmasin) */
@@ -27,7 +28,7 @@ body {
   font-family: var(--font);
   background: var(--bg);
   color: var(--ink);
-  overflow-x: hidden;
+  overflow-x: clip;
   -webkit-font-smoothing: antialiased;
   line-height: 1.6;
 }
